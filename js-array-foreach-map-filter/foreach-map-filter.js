@@ -46,18 +46,16 @@ Examples:
 
 */
 function showFirstAndLast(arr) {
+    const firstAndLast = [];
 
-    return arr.forEach(firstAndLast)
+    arr.forEach(function callback(value) {
+        firstAndLast.push(value[0] + value[value.length - 1]);
 
-    }
-    function firstAndLast(item,index,arr){
-        const arrayOfFirstandLastValues = [];
-        if(index = 0 || arr.length-1){
-            arrayOfFirstandLastValues.push(item)
-        }
-        return arrayOfFirstandLastValues
+    });
 
-    }
+    return firstAndLast;
+
+}
 
 
 
