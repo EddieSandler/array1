@@ -90,25 +90,34 @@ Examples:
     vowelCount('I Am awesome and so are you') // {i: 1, a: 4, e: 3, o: 3, u: 1};
 */
 function vowelCount(str) {
-    //create string of vowels
-    //create empty object
-    //change input string to lowercase
-    //iterate through each char of input string
-    //if char is vowel, set as key in object
-    //increment value of key
 
-    const vowels='aeiou';
-    let countOfVowels= {};
 
-     let phrase=Array.from(str)
-     phrase.forEach(el=>{
-        console.log(el,vowels.indexOf(el.toLowerCase())!== -1)
+
+
+    const vowels='aeiou';   //create string of vowels
+    let countOfVowels= {};  //create empty object
+
+
+     let phrase=Array.from(str) //convert input string to array
+
+     phrase.forEach(el=>{    //iterate through each char of array
+        // console.log(el,vowels.indexOf(el.toLowerCase())!== -1)
+        el=el.toLowerCase()  //change input string to lowercase
+        if (vowels.indexOf(el)!== -1){
+            if(!countOfVowels[el]) { //if char is vowel and not already in object, set as key in object, value=1
+                countOfVowels[el]=1
+            }else {
+                countOfVowels[el] ++ //increment  value  if it already exists in the obj
+
+            }
+        }
 
         })
+
+        return countOfVowels
 }
 
 
-vowelCount('Elie') // {e:2,i:1};
 
 /*
 Write a function called doubleValuesWithMap which accepts an array and returns a new array with all the values in the array passed to the function doubled
